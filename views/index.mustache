@@ -12,6 +12,23 @@
 
     <h2>Guess a letter</h2>
 
+    <div class="letters">
+      {{#letters}}
+        {{#letters.correct}}
+        <span>{{letters.letter}}
+        {{/letters.correct}}
+        {{^letters.correct}}
+        <span>_<span>
+        {{/letters.correct}}
+      {{/letters}}
+    </div>
+
+    <form class="letter-input" action="index.mustache" method="post">
+      <label for="guess">Guess a letter</label>
+      <input type="text" name="guess">
+      <button type="button" name="button">guess</button>
+    </form>
+
 
 
   </body>
