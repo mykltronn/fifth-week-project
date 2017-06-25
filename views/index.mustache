@@ -2,34 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Mystery Word</title>
   </head>
 
   <body>
-    <header>
-      <h1>This is not hangman</h1>
-    </header>
+    <main id="main-box">
 
-    <h2>Guess a letter</h2>
+      <header class="title">
+        <h1>This is <span>not</span> hangman...</h1>
+      </header>
 
-    <div class="letters">
-      {{#letters}}
-        {{#letters.correct}}
-        <span>{{letters.letter}}
-        {{/letters.correct}}
-        {{^letters.correct}}
-        <span>_<span>
-        {{/letters.correct}}
-      {{/letters}}
-    </div>
+      <div class="letters">
+        {{#letters}}
+          {{#letters.correct}}
+          <span>{{letters.letter}}</span>
+          {{/letters.correct}}
+          {{^letters.correct}}
+          <span>_</span>
+          {{/letters.correct}}
+        {{/letters}}
+      </div>
 
-    <form class="letter-input" action="index.mustache" method="post">
-      <label for="guess">Guess a letter</label>
-      <input type="text" name="guess">
-      <button type="button" name="button">guess</button>
-    </form>
+      <div class="guessed-letters">
+        {{#guesses}}
+        {{#.}}
+        <span>{{.}}</span>
+        {{/.}}
+        {{/guesses}}
+      </div>
+
+      <form class="letter-input" action="/play" method="post">
+        <label for="guess">Guess a letter</label><br>
+        <input type="text" name="guess" maxlength="1">
+        <button type="button" name="button">guess</button>
+      </form>
 
 
+    </main>
 
   </body>
 </html>

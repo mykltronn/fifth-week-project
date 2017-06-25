@@ -66,6 +66,10 @@ for (i=0; i < sessionWord.length; i++){
 // -- in other words, nest the ^ inside #/ so maybe it wont upset the order
 
 
+
+
+
+
 // can I store letters and words in an object?
 // the object could have key:value pairs like:
 // --  {"letter": "o",
@@ -74,17 +78,17 @@ for (i=0; i < sessionWord.length; i++){
 // AND how do I use whether or not guessed equals false to tell whether or not to show _ or the letter
 
 //currently I have an array of letters. When user uses input to guess a letter
-// sessionWord = ['c', 'o', 'm', 'p', 'a', 's', 's', 'i', 'o', 'n']
+sessionWord = ['c', 'o', 'm', 'p', 'a', 's', 's', 'i', 'o', 'n']
 // -- var currentGuess = 's'
-// for (i=0: i < sessionWord.length; i++){
-//  if currentGuess =
-//};
+for (i=0: i < sessionWord.length; i++){
+ if currentGuess =
+};
 
 //maybe I can do this instead:
 // -- var currentGuess = [];
-// for (i=0: i < sessionWord.length; i++){
-//  currentGuess.push("_");
-// }
+for (i=0: i < sessionWord.length; i++){
+ currentGuess.push("_");
+}
 // this logic works, but the array is hard to access in index.mustache.
 // definitely better to have currentGuess and
 

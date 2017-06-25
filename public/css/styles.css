@@ -1,0 +1,75 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+}
+
+/*******************************/
+
+.title {
+  text-align: center;
+  padding: 100px;
+}
+
+.title h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+h1 span {
+  text-decoration: underline;
+}
+
+.letters {
+  text-align: center;
+  height: 100px;
+}
+
+.letters span {
+  font-size: 50px;
+  color: grey;
+  padding: 5px;
+}
+
+.guessed-letters {
+  text-align: center;
+  height: 60px;
+  font-size: 30px;
+  color: grey;
+}
+
+.letter-input {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  margin: 20px;
+}
+
+.letter-input label {
+  font-size: 30px;
+}
+
+.letter-input input {
+  margin: 20px;
+  color: grey;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px;
+  width: 35px;
+  box-shadow: 0px 0px 20px 0px #000;
+}
+
+input:focus {
+  outline: none;
+}
+
+.letter-input button {
+  display: none;
+}
+
+#main-box {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 58px 7px #000;
+}
