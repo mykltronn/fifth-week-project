@@ -17,12 +17,12 @@
 
       <div class="letters">
         {{#letters}}
-          {{#letters.correct}}
-          <span>{{letters.letter}}</span>
-          {{/letters.correct}}
-          {{^letters.correct}}
+          {{#correct}}
+          <span>{{letter}}</span>
+          {{/correct}}
+          {{^correct}}
           <span>_</span>
-          {{/letters.correct}}
+          {{/correct}}
         {{/letters}}
       </div>
 

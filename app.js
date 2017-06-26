@@ -45,45 +45,48 @@ app.use(function(req, res, next){
   var letters = req.session.letters;
 
   if(!letters){
+    letters = req.session.letters = [];
     var randomWord = words[Math.floor(Math.random()*words.length)];
     var sessionWord = randomWord.split("");
-
-    var letters = [];
-
-    for(i=0; i<sessionWord.length; i++){
-      letters.push({"letter": sessionWord[i], "correct": false});
-      req.session.letters = letters;
-    };
+    // if(sessionWord.length > 4 && sessionWord.length < 8){
+      for(i=0; i<sessionWord.length; i++){
+        letters.push({"letter": sessionWord[i], "correct": false});
+        req.session.letters = letters;
+      };
+    // }
+    console.log("letters redefined");
   }
-  return letters
   next();
 });
-// app.use(function (req, res, next) {
-//   var views = req.session.views
-//
-//   if (!views) {
-//     views = req.session.views = {}
-//   }
-//
-//   // get the url pathname
-//   var pathname = parseurl(req).pathname
-//
-//   // count the views
-//   views[pathname] = (views[pathname] || 0) + 1
-//
-//   next()
-// })
+
 
 
 app.get('/', function(req, res){
 
-    res.render('index', { letters: letters })
+    res.render('index', { letters: req.session.letters })
 
 });
 
-// user requests '/' where req.session.letters is rendered through mustache
+// letters == guesses
+// req.session.letters == req.session.guesses
+//
+app.use(function(req, res, next){
+  var letters = req.session.letters;
 
-// req.session.letters is re-rendered in POST, but req.session.letters should contain the same word. For some reason it doesn't.
+  if(!letters){
+    letters = req.session.letters = [];
+    var randomWord = words[Math.floor(Math.random()*words.length)];
+    var sessionWord = randomWord.split("");
+    // if(sessionWord.length > 4 && sessionWord.length < 8){
+      for(i=0; i<sessionWord.length; i++){
+        letters.push({"letter": sessionWord[i], "correct": false});
+        req.session.letters = letters;
+      };
+    // }
+    console.log("letters redefined");
+  }
+  next();
+});
 
 app.post('/', function(req, res){
 
@@ -92,15 +95,18 @@ app.post('/', function(req, res){
   var guessArray = [];
   var correctedGuess = req.body.guess.toLowerCase();
 
-  for (i=0; i<letters.length; i++){
-    if (correctedGuess == letters[i].letter){
-      letters[i].correct = true;
+  for (i=0; i<req.session.letters.length; i++){
+    if (correctedGuess == req.session.letters[i].letter){
+      req.session.letters[i].correct = true;
     } // tested in node console and it works.
   };  // req.session.letters.correct should read true if the guess matched.
 
   guessArray.push(correctedGuess);
 
-  res.render('index', { letters: letters,
+  console.log(guessArray);
+  console.log(req.session.letters);
+
+  res.render('index', { letters: req.session.letters,
                         guesses: guessArray });
 });
 
