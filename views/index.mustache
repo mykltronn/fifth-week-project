@@ -28,13 +28,11 @@
 
       <div class="guessed-letters">
         {{#guesses}}
-        {{#.}}
         <span>{{.}}</span>
-        {{/.}}
         {{/guesses}}
       </div>
 
-      <form class="letter-input" action="/play" method="post">
+      <form class="letter-input" action="/" method="post">
         <label for="guess">Guess a letter</label><br>
         <input type="text" name="guess" maxlength="1">
         <button type="button" name="button">guess</button>

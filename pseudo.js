@@ -1,3 +1,12 @@
+// current problem @6:50pm Sunday June 25th
+
+
+
+
+
+
+
+
 // a session starts when user first requests '/'
 // user should see empty _ for each letter of the generated words
 // user should see an input field and be encouraged to guess a letter
@@ -105,8 +114,49 @@ for (i=0: i < sessionWord.length; i++){
     }
 };
 
+data.js = someting like this:
+module.exports = {
+  users:[
+    {
+    username: "ahgipadg",
+    password: "ahgdipa"
+    }
+    {
+      etc
+    }
+  ]
+}
+
+var data = require('data.js')
+
+
+function authenticate(username, password){
+  var authenticatedUser = data.users.find(function (user) {
+      if(user.username === username && user.password === password){
+        req.session.authenticated = true
+      }
+      else {
+        return false
+      }
+  })
+  return req.session.authenticated
+}
+
+you can chain GETs and POSTs:
+
+app.get('/', function(req, res, next){
+  res.send('Do something')
+})
+
+app.get('/', function(req, res, next){
+  get user name and password
+})
 
 
 
-
+app.post('/', function(req, res){
+  var username = req.body.username;
+  var password = req.body.password;
+  authenticate(username, password);
+})
 //
