@@ -1,5 +1,16 @@
+const express = require('express');
+const fs = require('fs');
+const validator = require('express-validator');
+const mustache = require('mustache-express');
+const bodyParser = require('body-parser');
+const parseurl = require('parseurl');
+const jsonfile = require('jsonfile');
+const session = require('express-session')
+
 
 const words = fs.readFileSync("/usr/share/dict/words", "utf-8").toLowerCase().split("\n");
+
+
 var randomWord;
 
 var easyWords = [];
@@ -33,17 +44,13 @@ function createWord(req, res){
 
     if(diffChoice == "easy"){
       randomWord = easyWords[Math.floor(Math.random()*easyWords.length)];
-      console.log(randomWord);
     }
     else if(diffChoice == "normal"){
       randomWord = normalWords[Math.floor(Math.random()*normalWords.length)];
-      console.log(randomWord);
     }
     else if(diffChoice == "hard"){
       randomWord = hardWords[Math.floor(Math.random()*hardWords.length)];
-      console.log(randomWord);
     }
-    console.log(randomWord);
     var sessionWord = randomWord.split("");
 
       for(i=0; i<sessionWord.length; i++){
@@ -81,8 +88,8 @@ function compareGuess(req, res){
   }
 
   guessArray.push(correctedGuess);
-  console.log(guessArray);
-  console.log(req.session.guessTotal);
+  console.log("Guess array is " + guessArray);
+  console.log("Guess total is " + req.session.guessTotal);
   return randomWord;
 }
 
@@ -97,7 +104,6 @@ function checkWin(req, res){
       counter ++
       }
     }
-    console.log(counter);
     if (counter == 1){
       return true;
     }
@@ -107,10 +113,11 @@ function checkWin(req, res){
     console.log("checkWin returns " + counter);
   }
 
-//watch organizing large express apps 
+//watch organizing large express apps
 module.exports = {
   sort: wordSorter,
   create: createWord,
-  compare: compareGuess.
-  check: checkWin
+  compare: compareGuess,
+  check: checkWin,
+  randomWord: randomWord
 }
