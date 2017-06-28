@@ -9,37 +9,56 @@
   </head>
 
   <body>
-    <main id="main-box">
+    <main id="main-box" class="main-box-8">
 
       <header class="title">
         <h1>This is <span>not</span> hangman...</h1>
       </header>
 
       <div class="letters">
+
         {{#letters}}
           {{#correct}}
           <span>{{letter}}</span>
           {{/correct}}
           {{^correct}}
-          <span>_</span>
+            {{#loser}}
+            <span id="loser">{{letter}}</span>
+            {{/loser}}
+            {{^loser}}
+            <span>_</span>
+            {{/loser}}
           {{/correct}}
         {{/letters}}
+        {{{link}}}
       </div>
 
       <div class="guessed-letters">
         {{#guesses}}
         <span>{{.}}</span>
         {{/guesses}}
+        <span>{{err}}</span>
+
       </div>
 
-      <form class="letter-input" action="/" method="post">
-        <label for="guess">Guess a letter</label><br>
-        <input type="text" name="guess" maxlength="1">
-        <button type="button" name="button">guess</button>
-      </form>
+      {{#playagain}}
+        {{{.}}}
+      {{/playagain}}
+      {{^playagain}}
+        <form class="letter-input" action="/" method="post">
+          <label for="guess">Guess a letter</label><br>
+          <input type="text" name="guess" maxlength="1" autofocus="autofocus">
+          <button type="button" name="button">guess</button>
+        </form>
 
+        <div class="guesses-left">
+          <span>you only have {{#number}}{{.}}{{/number}}{{^number}}8{{/number}} more guesses</span>
+        </div>
 
+      {{/playagain}}
+
+      <div id="magical-secret-hidden-counter">{{magic}}</div>
     </main>
-
+    <script src="scripts.js"></script>
   </body>
 </html>

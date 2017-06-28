@@ -3,8 +3,32 @@
 
 
 
+save it
 
 
+function compareGuess(req, res){
+
+  console.log('running');
+  var guessArray = req.session.guesses;
+  var guessTotal = req.session.guessTotal;
+  var correctedGuess = req.body.guess.toLowerCase();
+
+  if (!guessArray) {
+    guessArray = req.session.guesses = [];
+    guessTotal = req.session.letters.length;
+  }
+
+  for(i=0; i < req.session.letters.length; i++){ // this bit compares guesses to correct
+    if (correctedGuess == req.session.letters[i].letter){
+      req.session.letters[i].correct = true;
+    }
+  }
+
+  guessArray.push(correctedGuess);
+  guessTotal--
+  console.log("guesses altered");
+  console.log(guessArray);
+}
 
 
 // a session starts when user first requests '/'

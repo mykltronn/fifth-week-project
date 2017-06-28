@@ -9,11 +9,14 @@
 #this node directory contains, in addition to the factory node packages:
 #
 #
--- express
--- mustache-express
--- body-parser
--- express-validator
--- jsonfile
+"body-parser": "^1.17.2",
+"express": "^4.15.3",
+"express-session": "^1.15.3",
+"express-validator": "^3.2.0",
+"fs": "0.0.1-security",
+"jsonfile": "^3.0.0",
+"mustache-express": "^1.2.4",
+"parseurl": "^1.3.1"
 
 #
 #

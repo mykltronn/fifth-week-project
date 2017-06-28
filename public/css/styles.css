@@ -7,6 +7,69 @@
 
 /*******************************/
 
+.main-box-8{
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 60px 10px #000;
+  transition: all 1s;
+}
+
+.main-box-7 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 70px 20px #000;
+  transition: all 1.5s;
+}
+
+.main-box-6 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 90px 40px #000;
+  transition: all 1.5s;
+}
+
+.main-box-5 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 110px 60px #000;
+  transition: all 1.5s;
+}
+
+.main-box-4 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 130px 90px #000;
+  transition: all 1.5s;
+}
+
+.main-box-3 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 150px 125px #000;
+  transition: all 1.5s;
+}
+
+.main-box-2 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 170px 150px #000;
+  transition: all 1.5s;
+}
+
+.main-box-1 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 200px 180px #000;
+  transition: all 1.5s;
+}
+
+.main-box-0 {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0px 0px 200px 280px #000;
+  transition: all 1.5s;
+}
+
 .title {
   text-align: center;
   padding: 100px;
@@ -56,7 +119,7 @@ h1 span {
   font-size: 30px;
   text-align: center;
   padding: 5px;
-  width: 35px;
+  width: 45px;
   box-shadow: 0px 0px 20px 0px #000;
 }
 
@@ -68,8 +131,35 @@ input:focus {
   display: none;
 }
 
-#main-box {
-  width: 100vw;
-  height: 100vh;
-  box-shadow: inset 0px 0px 58px 7px #000;
+
+#loser {
+  color: #AF1515;
+}
+
+.guesses-left {
+  text-align: center;
+}
+
+.playagain {
+  text-align: center;
+}
+
+#again-button {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px 0px 20px 0px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: grey;
+}
+
+#magical-secret-hidden-counter {
+  display: none;
 }
