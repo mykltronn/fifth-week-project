@@ -1,5 +1,26 @@
 *** This repo contains the Week 5 project for The Iron Yard
 
+current latest version is MVP  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** below is the project description  
+
+
+
 * The assignment is to create a hang-man game implemented as a web app.
 #
 #the exact description is as follows:
@@ -9,14 +30,14 @@
 #this node directory contains, in addition to the factory node packages:
 #
 #
-"body-parser": "^1.17.2",
-"express": "^4.15.3",
-"express-session": "^1.15.3",
-"express-validator": "^3.2.0",
-"fs": "0.0.1-security",
-"jsonfile": "^3.0.0",
-"mustache-express": "^1.2.4",
-"parseurl": "^1.3.1"
+"body-parser": "^1.17.2",  
+"express": "^4.15.3",  
+"express-session": "^1.15.3",  
+"express-validator": "^3.2.0",  
+"fs": "0.0.1-security",  
+"jsonfile": "^3.0.0",  
+"mustache-express": "^1.2.4",  
+"parseurl": "^1.3.1"  
 
 #
 #
